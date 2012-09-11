@@ -1,0 +1,27 @@
+<h1>欢迎.........</h1>
+
+<table>
+  <tr>
+    <th>名称</th>
+    <th>主题</th>
+    <th>内容</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blogs.each do |blog| %>
+  <tr>
+    <td><%= blog.name %></td>
+    <td><%= blog.title %></td>
+    <td><%= blog.content %></td>
+    <td><%= link_to 'Show', blog %></td>
+    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新增一个试试看', new_blog_path %>
