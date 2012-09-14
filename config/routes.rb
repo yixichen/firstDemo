@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 FirstDemo::Application.routes.draw do
   resources :static_pages
 

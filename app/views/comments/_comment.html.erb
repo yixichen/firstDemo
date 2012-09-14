@@ -6,3 +6,9 @@
 	<b>内容：</b>
 	<%= comment.body %>
 </p>
+
+<p>
+	<%= link_to "Destroy Comment" ,[comment.blog,comment],  :confirm =>"确认删除吗？",
+	:method => :delete%>
+
+</p>

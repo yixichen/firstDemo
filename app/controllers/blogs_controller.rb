@@ -1,4 +1,7 @@
+# -*- encoding : utf-8 -*-
+#-*- coding:utf-8 -*-
 class BlogsController < ApplicationController
+   http_basic_authenticate_with :name => 'yixichen', :password =>'123456',:except =>[:index,:show]
   # GET /blogs
   # GET /blogs.json
  respond_to 'html','js','xml'
@@ -37,6 +40,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1/edit
   def edit
     @blog = Blog.find(params[:id])
+ 
   end
 
   # POST /blogs
@@ -59,10 +63,10 @@ class BlogsController < ApplicationController
   # PUT /blogs/1.json
   def update
     @blog = Blog.find(params[:id])
-
     respond_to do |format|
       if @blog.update_attributes(params[:blog])
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+        print "出异常了。。。。"
+        format.html { redirect_to @blog, notice: '成功更新帖子.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

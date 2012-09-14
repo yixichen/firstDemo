@@ -14,6 +14,10 @@
   <b>内容:</b>
   <%= @blog.content %>
 </p>
+ <p>
+   <b>标签：</b>
+    <%= join_tags @blog %>  
+ </p>
 <H2>评论列表</H2>
 <%= render @blog.comments %>
 <h2>添加评论:<h2>
@@ -30,5 +34,5 @@
  <%= f.submit  "提交" %>
 </div>
 <% end %>
-<%= link_to :编辑, edit_blog_path(@blog) %> |
-<%= link_to :返回, blogs_path %>
+<%= link_to "编辑", edit_blog_path(@blog) %> |
+<%= link_to '返回', blogs_path %>

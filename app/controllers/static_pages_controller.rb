@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class StaticPagesController < ApplicationController
   # GET /static_pages
   # GET /static_pages.json
